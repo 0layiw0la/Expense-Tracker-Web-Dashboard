@@ -16,7 +16,7 @@ function Dashboard() {
   const fetchExpenses = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/expenses", {
+      const res = await axios.get("https://expense-tracker-web-dashboard.onrender.com/expenses", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setExpenses(res.data);
@@ -30,7 +30,7 @@ function Dashboard() {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/expenses/${id}`, {
+      await axios.delete(`https://expense-tracker-web-dashboard.onrender.com/expenses/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -52,7 +52,7 @@ function Dashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/expenses", newExpense, {
+      const res = await axios.post("https://expense-tracker-web-dashboard.onrender.com/expenses", newExpense, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

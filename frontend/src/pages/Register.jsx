@@ -13,7 +13,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/auth/register", form);
+      await axios.post("https://expense-tracker-web-dashboard.onrender.com/auth/register", form);
       navigate("/");
     } catch (err) {
       alert("Registration failed");
