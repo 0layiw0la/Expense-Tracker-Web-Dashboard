@@ -9,14 +9,14 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Ensure FRONTEND_URL is properly handled
-const allowedOrigins = process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [];
+// Allow only your frontend URL
+const allowedOrigins = ["https://expensedash.netlify.app"];
 
 app.use(
   cors({
     origin: function (origin, callback) {
       console.log("Origin received:", origin); // Debugging log
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
