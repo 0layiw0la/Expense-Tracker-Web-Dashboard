@@ -10,12 +10,13 @@ const app = express();
 app.use(express.json());
 
 // Allow only your frontend URL
-const allowedOrigins = [process.env.FRONTEND_URL];
+const allowedOrigins = ["https://expensedash.netlify.app"];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      console.log("Origin received:", origin); // Debugging log
+      if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -37,7 +38,9 @@ const connectWithRetry = async (retries = 5, delay = 5000) => {
     try {
       await sequelize.authenticate();
       console.log("Database connected successfully");
-      app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
+      app.listen(process.env.PORT, () =>
+        console.log(`Server running on port ${process.env.PORT}`)
+      );
       return;
     } catch (err) {
       console.error(`DB Connection Error (Attempt ${i + 1}):`, err);
