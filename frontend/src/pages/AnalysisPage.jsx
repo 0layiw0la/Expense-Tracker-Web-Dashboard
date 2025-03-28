@@ -8,10 +8,10 @@ function AnalysisPage({ expenses, refreshExpenses }) {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="flex flex-col sm:flex-row min-h-screen md:gap-[8vw] ">
       <Sidebar />
-      <div className="p-4 w-full">
-        <h2 className="text-2xl font-bold mb-4">Expense Analysis</h2>
+      <div className="p-4 w-full ">
+        <h2 className="text-2xl font-bold text-center md:text-left mb-4">Expense Analysis</h2>
         <Analysis expenses={expenses} />
       </div>
     </div>
