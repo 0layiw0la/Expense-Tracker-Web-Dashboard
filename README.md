@@ -11,5 +11,4 @@ Web App Link: [here](https://expensedash.netlify.app/)
   <li>Express</li>
     <li>PostgreSQL</li>
   <li>Rechart (for data visualization)</li>
-    <li>Beautiful Soup</li>
 </ul>
