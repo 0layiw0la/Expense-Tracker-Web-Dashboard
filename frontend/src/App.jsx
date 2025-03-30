@@ -28,8 +28,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard expenses={expenses} refreshExpenses={fetchExpenses} />} />
         <Route path="/analysis" element={<AnalysisPage expenses={expenses} refreshExpenses={fetchExpenses} />} />
       </Routes>

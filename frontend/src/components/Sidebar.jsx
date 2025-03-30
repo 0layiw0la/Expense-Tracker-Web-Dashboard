@@ -23,7 +23,7 @@ function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen bg-gray-800 text-white p-4 transition-all duration-300
+        className={`fixed top-0 left-0 z-30 h-screen bg-gray-800 text-white p-4 transition-all duration-300
           ${open ? "w-64" : "w-0"} overflow-hidden md:w-[25vw] p-[10px] md:block`}
         style={{
           paddingLeft: open ? "16px" : "0",

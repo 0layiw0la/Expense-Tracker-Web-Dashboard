@@ -34,6 +34,7 @@ function Login() {
           name="username"
           placeholder="Username"
           onChange={handleChange}
+          required
         />
         <input
           className="border p-2 w-full mb-3 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -41,10 +42,16 @@ function Login() {
           name="password"
           placeholder="Password"
           onChange={handleChange}
+          required
         />
         <button className="bg-blue-500 text-white px-4 py-2 w-full rounded-md hover:bg-blue-600 transition">
           Login
         </button>
+        <a href="/">
+        <div className="mt-2 w-full text-center bg-[#d9dbde] text-black px-4 w-full py-2 rounded-md hover:bg-[#c1c3c7] transition">
+        Back to Sign up
+        </div>
+        </a>
       </form>
     </div>
   );

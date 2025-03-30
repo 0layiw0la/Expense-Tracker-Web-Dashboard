@@ -14,7 +14,7 @@ function Register() {
     e.preventDefault();
     try {
       await axios.post("https://expense-tracker-web-dashboard.onrender.com/auth/register", form);
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       alert("Registration failed");
     }
@@ -22,11 +22,16 @@ function Register() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="bg-white w-11/12 p-6 rounded-lg shadow-md max-w-xs">
         <h2 className="text-2xl font-bold mb-4">Register</h2>
-        <input className="border p-2 w-full mb-2" type="text" name="username" placeholder="Username" onChange={handleChange} />
-        <input className="border p-2 w-full mb-2" type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <button className="bg-green-500 text-white px-4 py-2 rounded">Register</button>
+        <input className="border p-2 w-full mb-2" type="text" name="username" placeholder="Username" onChange={handleChange} required/>
+        <input className="border p-2 w-full mb-2" type="password" name="password" placeholder="Password" onChange={handleChange} required/>
+        <button className="bg-blue-500 text-white px-4 w-full py-2 rounded-md hover:bg-blue-600 transition mb-2">Sign Up</button>
+        <a href="/login">
+        <div className="mt-2 w-full text-center bg-[#d9dbde] text-black px-4 w-full py-2 rounded-md hover:bg-[#c1c3c7] transition">
+        Already signed up? Login
+        </div>
+        </a>
       </form>
     </div>
   );
